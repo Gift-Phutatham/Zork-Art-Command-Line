@@ -29,7 +29,7 @@ public class CommandParser {
         String cmd = matchInputToCommand(cleanedInput);
         Command command = CommandFactory.get(cmd);
         if (command.numArgs() > 0) {
-            String argString = cleanedInput.substring(cmd.length() + 1);
+            String argString = cleanedInput.substring(cmd.length()).trim();
             System.out.println(argString);
             return Arrays.asList(cmd, argString);
         } else {
