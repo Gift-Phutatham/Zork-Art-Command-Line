@@ -24,13 +24,14 @@ public class CommandParser {
         return null;
     }
 
-    public List<String> parse(String stringInput) { //
+    public List<String> parse(String stringInput) {
         String cleanedInput = stringInput.trim();
         String cmd = matchInputToCommand(cleanedInput);
         Command command = CommandFactory.get(cmd);
-        if (command.numArgs() > 0) {
+        if (command == null) {
+            return null;
+        } else if (command.numArgs() > 0) {
             String argString = cleanedInput.substring(cmd.length()).trim();
-            System.out.println(argString);
             return Arrays.asList(cmd, argString);
         } else {
             return Arrays.asList(cmd);

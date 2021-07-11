@@ -15,9 +15,13 @@ public class Game {
             Scanner in = new Scanner(System.in);
             String s = in.nextLine();
             List<String> words = commandParser.parse(s);
-            Command command = CommandFactory.get(words.get(0));
-            if (command != null) {
-                command.execute(this, words.subList(1, words.size()));
+            if (words == null) {
+                System.out.println("Command not found");
+            } else {
+                Command command = CommandFactory.get(words.get(0));
+                if (command != null) {
+                    command.execute(this, words.subList(1, words.size()));
+                }
             }
         }
     }
