@@ -12,16 +12,16 @@ public class MyMap {
     private void createRooms() {
         Room gym = new Room("Gym");
         Room lab = new Room("Lab");
-        Room office = new Room("Office");
+        Room canteen = new Room("Canteen");
         Room classroom = new Room("Classroom");
         Room auditorium = new Room("Auditorium");
 
-        rooms = new Room[] {gym, lab, office, classroom, auditorium};
+        rooms = new Room[] {gym, lab, canteen, classroom, auditorium};
 
         gym.setExits(null, classroom, null, null);
         lab.setExits(null, null, classroom, null);
-        office.setExits(classroom, null, null, null);
-        classroom.setExits(auditorium, lab, gym, office);
+        canteen.setExits(classroom, null, null, null);
+        classroom.setExits(auditorium, lab, gym, canteen);
         auditorium.setExits(null, null, null, classroom);
 
         currentRoom = classroom;

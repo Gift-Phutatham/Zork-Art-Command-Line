@@ -6,10 +6,12 @@ import java.util.Map;
 public class Room {
 
     private String roomName;
+    private Monster monster;
     public Map<String, Room> map;
 
     public Room(String roomName) {
         map = new HashMap<>();
+        monster = new Monster();
         this.roomName = roomName;
     }
 
