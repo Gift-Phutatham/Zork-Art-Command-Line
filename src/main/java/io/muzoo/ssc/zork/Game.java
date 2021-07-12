@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Game {
 
+    private MyMap myMap = new MyMap();
     private GameOutput output = new GameOutput();
     private CommandParser commandParser = new CommandParser();
 
@@ -28,6 +29,10 @@ public class Game {
 
     public GameOutput getOutput() {
         return output;
+    }
+
+    public void go(String direction) {
+        myMap.go(direction);
     }
 
     public void exit() {
