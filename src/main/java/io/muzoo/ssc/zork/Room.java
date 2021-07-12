@@ -1,17 +1,21 @@
 package io.muzoo.ssc.zork;
 
+import io.muzoo.ssc.zork.item.Item;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class Room {
 
+    private Item[] items;
     private String roomName;
     private Monster monster;
     public Map<String, Room> map;
 
-    public Room(String roomName) {
+    public Room(String roomName, Item[] items) {
         map = new HashMap<>();
         monster = new Monster();
+        this.items = items;
         this.roomName = roomName;
     }
 

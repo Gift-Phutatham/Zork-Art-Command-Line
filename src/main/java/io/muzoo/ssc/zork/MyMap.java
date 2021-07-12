@@ -1,20 +1,34 @@
 package io.muzoo.ssc.zork;
 
+import io.muzoo.ssc.zork.item.Crossbow;
+import io.muzoo.ssc.zork.item.Item;
+import io.muzoo.ssc.zork.item.Painkiller;
+import io.muzoo.ssc.zork.item.Vest;
+
 public class MyMap {
 
     private Room[] rooms;
     private Room currentRoom;
+    private Vest vest;
+    private Crossbow crossbow;
+    private Painkiller painkiller;
 
     public MyMap() {
         createRooms();
     }
 
     private void createRooms() {
-        Room gym = new Room("Gym");
-        Room lab = new Room("Lab");
-        Room canteen = new Room("Canteen");
-        Room classroom = new Room("Classroom");
-        Room auditorium = new Room("Auditorium");
+        Item[] gymItem = {vest};
+        Item[] labItem = {crossbow};
+        Item[] canteenItem = {painkiller};
+        Item[] classroomItem = {vest, crossbow};
+        Item[] auditoriumItem = {vest, painkiller};
+
+        Room gym = new Room("Gym", gymItem);
+        Room lab = new Room("Lab", labItem);
+        Room canteen = new Room("Canteen", canteenItem);
+        Room classroom = new Room("Classroom", classroomItem);
+        Room auditorium = new Room("Auditorium", auditoriumItem);
 
         rooms = new Room[] {gym, lab, canteen, classroom, auditorium};
 
