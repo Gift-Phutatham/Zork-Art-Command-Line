@@ -26,14 +26,13 @@ public class Player {
         return null;
     }
 
-    public Item drop(String item) {
+    public void drop(String item) {
         Item itemItem = getItem(item);
         if (itemItem == null) {
             System.out.println("No " + item + " found in player");
         } else {
             items.remove(itemItem);
         }
-        return itemItem;
     }
 
     public void printItemInfo() {

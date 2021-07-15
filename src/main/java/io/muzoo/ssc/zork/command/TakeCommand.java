@@ -1,7 +1,6 @@
 package io.muzoo.ssc.zork.command;
 
 import io.muzoo.ssc.zork.Game;
-import io.muzoo.ssc.zork.Player;
 import io.muzoo.ssc.zork.item.Item;
 
 import java.util.List;
