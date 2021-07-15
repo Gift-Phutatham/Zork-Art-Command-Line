@@ -72,6 +72,10 @@ public class MyMap {
         return itemItem;
     }
 
+    public Monster getMonster() {
+        return currentRoom.getMonster();
+    }
+
     public void printItemInfo() {
         currentRoom.printItemInfo();
     }

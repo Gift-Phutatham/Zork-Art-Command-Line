@@ -4,7 +4,7 @@ public class Painkiller implements Item {
 
     @Override
     public String getItemName() {
-        return "Painkiller";
+        return "painkiller";
     }
 
     @Override
@@ -19,6 +19,6 @@ public class Painkiller implements Item {
 
     @Override
     public int getBoostPower() {
-        return 15;
+        return 10;
     }
 }

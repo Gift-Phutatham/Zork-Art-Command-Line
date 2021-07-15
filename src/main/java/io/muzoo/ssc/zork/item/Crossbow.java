@@ -4,7 +4,7 @@ public class Crossbow implements Item {
 
     @Override
     public String getItemName() {
-        return "Crossbow";
+        return "crossbow";
     }
 
     @Override

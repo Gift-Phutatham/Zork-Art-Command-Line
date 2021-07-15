@@ -7,9 +7,14 @@ import java.util.List;
 
 public class Player {
 
+    private int HP;
+    private int fistPower;
     private List<Item> items = new ArrayList<>();
 
-    public Player() {}
+    public Player() {
+        this.HP = 100;
+        this.fistPower = 3;
+    }
 
     public void take(Item item) {
         if (item != null) {
@@ -33,6 +38,37 @@ public class Player {
         } else {
             items.remove(itemItem);
         }
+    }
+
+    public int attackWith(String item) {
+        Item itemItem = getItem(item);
+        if (itemItem != null) {
+            return itemItem.getAttackPower();
+        }
+        return fistPower;
+    }
+
+    private int getDefensePower() {
+        for (Item eachItem : items) {
+            int defensePower = eachItem.getDefensePower();
+            if (defensePower > 0) {
+                return defensePower;
+            }
+        }
+        return 0;
+    }
+
+    public void receiveDamage(int attackPower) {
+        int damage = attackPower - getDefensePower();
+        this.HP -= damage;
+        System.out.println("Player receives " + damage + " of damage");
+        System.out.println("Current HP of player: " + this.HP);
+    }
+
+    public void boostHP(int boostPower) {
+        this.HP += boostPower;
+        System.out.println("Player receives " + boostPower + " more of HP");
+        System.out.println("Current HP: " + this.HP);
     }
 
     public void printItemInfo() {

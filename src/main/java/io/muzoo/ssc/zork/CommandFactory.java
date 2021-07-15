@@ -14,9 +14,10 @@ public class CommandFactory {
     private static final Map<String, Command> COMMAND_MAP = new HashMap<>();
     private static final List<Class<? extends Command>> REGISTERED_COMMANDS = Arrays.asList(
             InfoCommand.class,
-            GoCommand.class,
             TakeCommand.class,
             DropCommand.class,
+            AttackWithCommand.class,
+            GoCommand.class,
             HelpCommand.class,
             ExitCommand.class
     );

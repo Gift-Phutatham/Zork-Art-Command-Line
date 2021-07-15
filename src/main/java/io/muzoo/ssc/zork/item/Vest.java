@@ -4,7 +4,7 @@ public class Vest implements Item {
 
     @Override
     public String getItemName() {
-        return "Vest";
+        return "vest";
     }
 
     @Override
@@ -14,7 +14,7 @@ public class Vest implements Item {
 
     @Override
     public int getDefensePower() {
-        return 10;
+        return 15;
     }
 
     @Override

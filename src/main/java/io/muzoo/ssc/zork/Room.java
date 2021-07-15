@@ -51,6 +51,10 @@ public class Room {
         return itemItem;
     }
 
+    public Monster getMonster() {
+        return monster;
+    }
+
     public void printItemInfo() {
         System.out.println("Item in Room");
         for (Item eachItem : items) {
