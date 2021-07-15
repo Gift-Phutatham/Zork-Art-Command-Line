@@ -10,7 +10,7 @@ public class Room {
 
     private String roomName;
     private Monster monster;
-    private List<Item> items;
+    public List<Item> items;
     public Map<String, Room> map;
 
     public Room(String roomName, List<Item> items) {
@@ -53,12 +53,5 @@ public class Room {
 
     public Monster getMonster() {
         return monster;
-    }
-
-    public void printItemInfo() {
-        System.out.println("Item in Room");
-        for (Item eachItem : items) {
-            System.out.println("  " + eachItem.getItemName());
-        }
     }
 }

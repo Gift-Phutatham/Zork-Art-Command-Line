@@ -68,15 +68,28 @@ public class MyMap {
     }
 
     public Item take(String item) {
-        Item itemItem = currentRoom.take(item);
-        return itemItem;
+        return currentRoom.take(item);
     }
 
     public Monster getMonster() {
         return currentRoom.getMonster();
     }
 
-    public void printItemInfo() {
-        currentRoom.printItemInfo();
+    public void printInfo() {
+        System.out.println("ROOM INFORMATION");
+        System.out.println("  Current room: " + currentRoom.getRoomName());
+        for (String direction : currentRoom.map.keySet()) {
+            Room room = currentRoom.map.get(direction);
+            if (room != null) {
+                System.out.println("  " + currentRoom.getRoomName() + "'s " + direction + ": " + room.getRoomName());
+            }
+        }
+        Monster monster = getMonster();
+        System.out.println("  Current monster's HP: " + monster.getHP());
+        System.out.println("  Monster's default attack power: " + monster.sendDamage());
+        System.out.println("  Item in Room");
+        for (Item eachItem : currentRoom.items) {
+            System.out.println("    " + eachItem.getItemName());
+        }
     }
 }

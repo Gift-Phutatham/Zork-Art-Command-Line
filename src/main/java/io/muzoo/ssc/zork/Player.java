@@ -8,11 +8,13 @@ import java.util.List;
 public class Player {
 
     private int HP;
+    private int maxHP;
     private int fistPower;
     private List<Item> items = new ArrayList<>();
 
     public Player() {
         this.HP = 100;
+        this.maxHP = 100;
         this.fistPower = 3;
     }
 
@@ -71,10 +73,20 @@ public class Player {
         System.out.println("Current HP: " + this.HP);
     }
 
-    public void printItemInfo() {
-        System.out.println("Item in Player");
-        for (Item eachItem : items) {
-            System.out.println("  " + eachItem.getItemName());
+    public void printInfo() {
+        System.out.println("PLAYER STAT");
+        System.out.println("  Current HP: " + this.HP);
+        System.out.println("  Maximum HP: " + this.maxHP);
+        System.out.println("  Fist power: " + this.fistPower);
+        System.out.println("  Item in Player");
+        if (items.isEmpty()) {
+            System.out.println("    None");
+        } else {
+            for (Item eachItem : items) {
+                System.out.println("    " + eachItem.getItemName() + "'s attack power: " + eachItem.getAttackPower());
+                System.out.println("    " + eachItem.getItemName() + "'s defense power: " + eachItem.getDefensePower());
+                System.out.println("    " + eachItem.getItemName() + "'s boost power: " + eachItem.getBoostPower());
+            }
         }
     }
 }
