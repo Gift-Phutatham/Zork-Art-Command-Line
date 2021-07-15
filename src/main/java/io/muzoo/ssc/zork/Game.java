@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Game {
 
     public MyMap myMap = new MyMap();
+    public Player player = new Player();
     private GameOutput output = new GameOutput();
     private CommandParser commandParser = new CommandParser();
 

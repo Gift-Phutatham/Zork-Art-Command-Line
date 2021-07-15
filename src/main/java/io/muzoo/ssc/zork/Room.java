@@ -41,22 +41,20 @@ public class Room {
         return null;
     }
 
-    public void take(String item) {
+    public Item take(String item) {
         Item itemItem = getItem(item);
         if (itemItem == null) {
-            System.out.println("No " + item + " found");
+            System.out.println("No " + item + " found in room");
         } else {
             items.remove(itemItem);
         }
-    }
-
-    public void drop(String item) {
-
+        return itemItem;
     }
 
     public void printItemInfo() {
+        System.out.println("Item in Room");
         for (Item eachItem : items) {
-            System.out.println(eachItem.getItemName());
+            System.out.println("  " + eachItem.getItemName());
         }
     }
 }

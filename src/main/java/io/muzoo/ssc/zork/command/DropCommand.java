@@ -1,6 +1,7 @@
 package io.muzoo.ssc.zork.command;
 
 import io.muzoo.ssc.zork.Game;
+import io.muzoo.ssc.zork.item.Item;
 
 import java.util.List;
 
@@ -18,6 +19,6 @@ public class DropCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
-        game.myMap.drop(args.get(0));
+        game.player.drop(args.get(0));
     }
 }

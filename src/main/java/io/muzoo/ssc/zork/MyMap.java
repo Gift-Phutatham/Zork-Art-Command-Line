@@ -67,12 +67,9 @@ public class MyMap {
         }
     }
 
-    public void take(String item) {
-        currentRoom.take(item);
-    }
-
-    public void drop(String item) {
-        currentRoom.drop(item);
+    public Item take(String item) {
+        Item itemItem = currentRoom.take(item);
+        return itemItem;
     }
 
     public void printItemInfo() {

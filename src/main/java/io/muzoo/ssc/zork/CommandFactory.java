@@ -16,7 +16,7 @@ public class CommandFactory {
             InfoCommand.class,
             GoCommand.class,
             TakeCommand.class,
-//            DropCommand.class,
+            DropCommand.class,
             HelpCommand.class,
             ExitCommand.class
     );
