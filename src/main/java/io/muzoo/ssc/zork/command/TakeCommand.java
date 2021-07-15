@@ -19,7 +19,7 @@ public class TakeCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
-        Item item = game.myMap.take(args.get(0));
+        Item item = game.schoolMap.take(args.get(0));
         game.player.take(item);
     }
 }

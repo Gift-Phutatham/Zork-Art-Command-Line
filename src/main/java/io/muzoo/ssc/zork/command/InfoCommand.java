@@ -19,6 +19,6 @@ public class InfoCommand implements Command {
     @Override
     public void execute(Game game, List<String> args) {
         game.getOutput().printPlayerInfo(game.player);
-        game.getOutput().printRoomInfo(game.myMap);
+        game.getOutput().printRoomInfo(game.schoolMap);
     }
 }

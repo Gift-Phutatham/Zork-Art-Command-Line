@@ -19,8 +19,8 @@ public class AttackWithCommand implements Command {
     @Override
     public void execute(Game game, List<String> args) {
         int damage = game.player.attackWith(args.get(0));
-        game.myMap.getMonster().receiveDamage(damage);
-        int attackPower = game.myMap.getMonster().sendDamage();
+        game.schoolMap.getMonster().receiveDamage(damage);
+        int attackPower = game.schoolMap.getMonster().sendDamage();
         game.player.receiveDamage(attackPower);
     }
 }

@@ -3,6 +3,8 @@ package io.muzoo.ssc.zork;
 import io.muzoo.ssc.zork.item.Item;
 
 import java.util.List;
+
+import io.muzoo.ssc.zork.map.SchoolMap;
 import org.apache.commons.lang3.StringUtils;
 
 public class GameOutput {
@@ -33,19 +35,19 @@ public class GameOutput {
         printItem(player.items);
     }
 
-    public void printRoomInfo(MyMap myMap) {
+    public void printRoomInfo(SchoolMap schoolMap) {
         System.out.println("ROOM INFORMATION");
-        System.out.println("  Current room: " + myMap.currentRoom.getRoomName());
-        for (String direction : myMap.currentRoom.map.keySet()) {
-            Room room = myMap.currentRoom.map.get(direction);
+        System.out.println("  Current room: " + schoolMap.currentRoom.getRoomName());
+        for (String direction : schoolMap.currentRoom.map.keySet()) {
+            Room room = schoolMap.currentRoom.map.get(direction);
             if (room != null) {
-                System.out.printf("  %s's %s: %s\n", myMap.currentRoom.getRoomName(), direction, room.getRoomName());
+                System.out.printf("  %s's %s: %s\n", schoolMap.currentRoom.getRoomName(), direction, room.getRoomName());
             }
         }
-        Monster monster = myMap.getMonster();
+        Monster monster = schoolMap.getMonster();
         System.out.println("  Monster's HP: " + monster.getHP());
         System.out.println("  Monster's default attack power: " + monster.sendDamage());
         System.out.println("  Item in room:");
-        printItem(myMap.currentRoom.items);
+        printItem(schoolMap.currentRoom.items);
     }
 }

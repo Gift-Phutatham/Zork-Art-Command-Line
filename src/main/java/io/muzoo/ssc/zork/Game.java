@@ -1,13 +1,14 @@
 package io.muzoo.ssc.zork;
 
 import io.muzoo.ssc.zork.command.Command;
+import io.muzoo.ssc.zork.map.SchoolMap;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class Game {
 
-    public MyMap myMap = new MyMap();
+    public SchoolMap schoolMap = new SchoolMap();
     public Player player = new Player();
     private GameOutput output = new GameOutput();
     private CommandParser commandParser = new CommandParser();
