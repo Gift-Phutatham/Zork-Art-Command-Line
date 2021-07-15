@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MyMap {
 
-    private Room currentRoom;
+    public Room currentRoom;
     private Vest vest = new Vest();
     private Crossbow crossbow = new Crossbow();
     private Painkiller painkiller = new Painkiller();
@@ -73,23 +73,5 @@ public class MyMap {
 
     public Monster getMonster() {
         return currentRoom.getMonster();
-    }
-
-    public void printInfo() {
-        System.out.println("ROOM INFORMATION");
-        System.out.println("  Current room: " + currentRoom.getRoomName());
-        for (String direction : currentRoom.map.keySet()) {
-            Room room = currentRoom.map.get(direction);
-            if (room != null) {
-                System.out.println("  " + currentRoom.getRoomName() + "'s " + direction + ": " + room.getRoomName());
-            }
-        }
-        Monster monster = getMonster();
-        System.out.println("  Current monster's HP: " + monster.getHP());
-        System.out.println("  Monster's default attack power: " + monster.sendDamage());
-        System.out.println("  Item in Room");
-        for (Item eachItem : currentRoom.items) {
-            System.out.println("    " + eachItem.getItemName());
-        }
     }
 }
