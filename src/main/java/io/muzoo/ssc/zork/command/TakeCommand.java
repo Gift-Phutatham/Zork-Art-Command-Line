@@ -8,7 +8,7 @@ public class TakeCommand implements Command {
 
     @Override
     public int numArgs() {
-        return 0;
+        return 1;
     }
 
     @Override
@@ -18,6 +18,6 @@ public class TakeCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
-
+        game.myMap.take(args.get(0));
     }
 }

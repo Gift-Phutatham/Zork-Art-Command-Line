@@ -18,6 +18,6 @@ public class GoCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
-        game.go(args.get(0));
+        game.myMap.go(args.get(0));
     }
 }

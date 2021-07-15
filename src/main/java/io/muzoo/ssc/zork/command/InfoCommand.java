@@ -4,20 +4,20 @@ import io.muzoo.ssc.zork.Game;
 
 import java.util.List;
 
-public class DropCommand implements Command {
+public class InfoCommand implements Command {
 
     @Override
     public int numArgs() {
-        return 1;
+        return 0;
     }
 
     @Override
     public String getCommand() {
-        return "drop";
+        return "info";
     }
 
     @Override
     public void execute(Game game, List<String> args) {
-        game.myMap.drop(args.get(0));
+        game.myMap.printItemInfo();
     }
 }
