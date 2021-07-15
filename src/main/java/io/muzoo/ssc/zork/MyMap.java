@@ -48,10 +48,10 @@ public class MyMap {
         currentRoom = classroom;
     }
 
-    public void go(String direction) {
+    public Room go(String direction) {
         if (direction.equals("")) {
             System.out.println("Go where?");
-            return;
+            return null;
         }
         Room nextRoom = null;
         for (String i : currentRoom.map.keySet()) {
@@ -65,6 +65,7 @@ public class MyMap {
             currentRoom = nextRoom;
             System.out.println(currentRoom.getRoomName());
         }
+        return nextRoom;
     }
 
     public Item take(String item) {

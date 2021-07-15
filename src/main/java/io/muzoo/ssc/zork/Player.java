@@ -9,12 +9,14 @@ public class Player {
 
     public int HP;
     public int maxHP;
+    private int bonusHP;
     public int fistPower;
     public List<Item> items = new ArrayList<>();
 
     public Player() {
         this.HP = 100;
         this.maxHP = 100;
+        this.bonusHP = 20;
         this.fistPower = 3;
     }
 
@@ -67,9 +69,24 @@ public class Player {
         System.out.println("Current HP of player: " + this.HP);
     }
 
-    public void boostHP(int boostPower) {
-        this.HP += boostPower;
-        System.out.println("Player receives " + boostPower + " more of HP");
+    private int getBoostPower() {
+        for (Item eachItem : items) {
+            int boostPower = eachItem.getBoostPower();
+            if (boostPower > 0) {
+                return boostPower;
+            }
+        }
+        return 0;
+    }
+
+    public void go() {
+        int boostPower = getBoostPower();
+        int moreHP = boostPower + this.bonusHP;
+        this.HP += moreHP;
+        if (this.HP > this.maxHP) {
+            this.HP = this.maxHP;
+        }
+        System.out.println("Player receives " + moreHP + " more of HP");
         System.out.println("Current HP: " + this.HP);
     }
 }
