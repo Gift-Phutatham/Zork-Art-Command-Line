@@ -49,6 +49,7 @@ public class Player {
         if (itemItem != null) {
             return itemItem.getAttackPower();
         }
+        System.out.println(item + " is not found. Attack with fist instead.");
         return fistPower;
     }
 
