@@ -88,5 +88,6 @@ public class Player {
         }
         System.out.println("Player receives " + moreHP + " more of HP");
         System.out.println("Current HP: " + this.HP);
+        items.clear();
     }
 }

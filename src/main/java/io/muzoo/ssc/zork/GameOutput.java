@@ -3,6 +3,7 @@ package io.muzoo.ssc.zork;
 import io.muzoo.ssc.zork.item.Item;
 
 import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 
 public class GameOutput {
 
@@ -15,9 +16,10 @@ public class GameOutput {
             System.out.println("    None");
         } else {
             for (Item eachItem : items) {
-                System.out.printf("    %s's attack power: %d\n", eachItem.getItemName(), eachItem.getAttackPower());
-                System.out.printf("    %s's defense power: %d\n", eachItem.getItemName(), eachItem.getDefensePower());
-                System.out.printf("    %s's boost power: %d\n", eachItem.getItemName(), eachItem.getBoostPower());
+                System.out.printf("    %s:\n", StringUtils.capitalize(eachItem.getItemName()));
+                System.out.println("      Attack power: " + eachItem.getAttackPower());
+                System.out.println("      Defense power: " + eachItem.getDefensePower());
+                System.out.println("      Boost power: " + eachItem.getBoostPower());
             }
         }
     }
