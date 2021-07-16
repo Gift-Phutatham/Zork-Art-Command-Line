@@ -17,6 +17,11 @@ public class LoadCommand implements Command {
     }
 
     @Override
+    public boolean isInGameCommand() {
+        return false;
+    }
+
+    @Override
     public void execute(Game game, List<String> args) {
         if (!game.isInGame) {
             game.load(args.get(0));

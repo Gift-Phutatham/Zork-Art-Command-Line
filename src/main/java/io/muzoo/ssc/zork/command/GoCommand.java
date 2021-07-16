@@ -17,6 +17,11 @@ public class GoCommand implements Command {
     }
 
     @Override
+    public boolean isInGameCommand() {
+        return true;
+    }
+
+    @Override
     public void execute(Game game, List<String> args) {
         if (game.isInGame) {
             if (game.currentMap.go(args.get(0)) != null) {

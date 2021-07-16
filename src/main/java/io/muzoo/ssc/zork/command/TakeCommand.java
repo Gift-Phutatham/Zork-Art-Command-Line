@@ -18,6 +18,11 @@ public class TakeCommand implements Command {
     }
 
     @Override
+    public boolean isInGameCommand() {
+        return true;
+    }
+
+    @Override
     public void execute(Game game, List<String> args) {
         if (game.isInGame) {
             Item item = game.currentMap.take(args.get(0));

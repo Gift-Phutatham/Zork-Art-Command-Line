@@ -17,10 +17,13 @@ public class ExitCommand implements Command {
     }
 
     @Override
+    public boolean isInGameCommand() {
+        return false;
+    }
+
+    @Override
     public void execute(Game game, List<String> args) {
-        if (game.isInGame) {
-            game.getOutput().println("Game exit");
-            game.exit();
-        }
+        game.getOutput().println("Game exit");
+        game.exit();
     }
 }

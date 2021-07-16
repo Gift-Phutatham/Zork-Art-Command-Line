@@ -10,5 +10,7 @@ public interface Command {
 
     String getCommand();
 
+    boolean isInGameCommand();
+
     void execute(Game game, List<String> args);
 }

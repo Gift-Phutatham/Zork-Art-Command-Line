@@ -17,6 +17,11 @@ public class AttackWithCommand implements Command {
     }
 
     @Override
+    public boolean isInGameCommand() {
+        return true;
+    }
+
+    @Override
     public void execute(Game game, List<String> args) {
         if (game.isInGame) {
             int damage = game.player.attackWith(args.get(0));

@@ -46,4 +46,15 @@ public class CommandFactory {
     public static List<String> getAllCommands() {
         return COMMAND_MAP.keySet().stream().collect(Collectors.toList());
     }
+
+    public static void printHelp(Game game) {
+        for (Command command : COMMAND_MAP.values()) {
+            if (command.isInGameCommand() == game.isInGame) {
+                String toPrint = command.getCommand();
+                if (!toPrint.equals("help")) {
+                    game.getOutput().println(toPrint);
+                }
+            }
+        }
+    }
 }

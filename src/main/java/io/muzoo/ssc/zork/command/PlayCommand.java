@@ -17,6 +17,11 @@ public class PlayCommand implements Command {
     }
 
     @Override
+    public boolean isInGameCommand() {
+        return false;
+    }
+
+    @Override
     public void execute(Game game, List<String> args) {
         if (!game.isInGame) {
             game.play(args.get(0));

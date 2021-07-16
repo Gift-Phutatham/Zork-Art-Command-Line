@@ -24,7 +24,6 @@ public class Game {
                 System.out.println("Command not found");
             } else {
                 if (!words.get(0).equals("quit") && !words.get(0).equals("load") && !words.get(0).equals("save")) {
-                    System.out.println(words.get(0));
                     saveCommands.add(words);
                 }
                 operate(words);

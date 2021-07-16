@@ -18,10 +18,12 @@ public class HelpCommand implements Command {
     }
 
     @Override
+    public boolean isInGameCommand() {
+        return true;
+    }
+
+    @Override
     public void execute(Game game, List<String> args) {
-        List<String> commands = CommandFactory.getAllCommands();
-        for (String command : commands) {
-            game.getOutput().println(command);
-        }
+        CommandFactory.printHelp(game);
     }
 }

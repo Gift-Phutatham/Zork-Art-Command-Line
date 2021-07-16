@@ -17,6 +17,11 @@ public class InfoCommand implements Command {
     }
 
     @Override
+    public boolean isInGameCommand() {
+        return true;
+    }
+
+    @Override
     public void execute(Game game, List<String> args) {
         if (game.isInGame) {
             game.getOutput().printPlayerInfo(game.player);

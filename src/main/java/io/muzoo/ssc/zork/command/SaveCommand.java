@@ -17,6 +17,11 @@ public class SaveCommand implements Command {
     }
 
     @Override
+    public boolean isInGameCommand() {
+        return true;
+    }
+
+    @Override
     public void execute(Game game, List<String> args) {
         if (game.isInGame) {
             game.save(args.get(0));
