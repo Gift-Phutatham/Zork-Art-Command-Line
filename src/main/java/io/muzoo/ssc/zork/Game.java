@@ -3,9 +3,7 @@ package io.muzoo.ssc.zork;
 import io.muzoo.ssc.zork.command.Command;
 import io.muzoo.ssc.zork.map.MyMap;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Game {
 
@@ -15,6 +13,7 @@ public class Game {
     private GameOutput output = new GameOutput();
     private CommandParser commandParser = new CommandParser();
     public List<List<String>> saveCommands = new ArrayList<>();
+    public Map<String, List<List<String>>> allSaveCommands = new HashMap<>();
 
     public void run() {
         while (true) {
@@ -24,7 +23,10 @@ public class Game {
             if (words == null) {
                 System.out.println("Command not found");
             } else {
-                saveCommands.add(words);
+                if (!words.get(0).equals("quit") && !words.get(0).equals("load") && !words.get(0).equals("save")) {
+                    System.out.println(words.get(0));
+                    saveCommands.add(words);
+                }
                 operate(words);
             }
         }
@@ -57,12 +59,21 @@ public class Game {
         isInGame = false;
     }
 
-//    public void load() {
-//        for (List<String> words : saveCommands) {
-//            operate(words);
-//        }
-//        saveCommands.clear();
-//    }
+    public void load(String savedPointName) {
+        List<List<String>> toLoad = allSaveCommands.get(savedPointName);
+        if (toLoad != null){
+            for (List<String> words : toLoad) {
+                System.out.println(words.get(0));
+                operate(words);
+            }
+        } else {
+            System.out.println("No " + savedPointName + " found");
+        }
+    }
+
+    public void save(String savedPointName) {
+        allSaveCommands.put(savedPointName, saveCommands);
+    }
 
     public void exit() {
         System.exit(0);
