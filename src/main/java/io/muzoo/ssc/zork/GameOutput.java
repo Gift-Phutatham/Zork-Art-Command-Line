@@ -1,12 +1,9 @@
 package io.muzoo.ssc.zork;
 
 import io.muzoo.ssc.zork.item.Item;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
-
-import io.muzoo.ssc.zork.map.MyMap;
-import io.muzoo.ssc.zork.map.SchoolMyMap;
-import org.apache.commons.lang3.StringUtils;
 
 public class GameOutput {
 

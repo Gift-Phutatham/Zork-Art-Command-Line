@@ -60,7 +60,7 @@ public class Game {
 
     public void load(String savedPointName) {
         List<List<String>> toLoad = allSaveCommands.get(savedPointName);
-        if (toLoad != null){
+        if (toLoad != null) {
             for (List<String> words : toLoad) {
                 System.out.println(words.get(0));
                 operate(words);
