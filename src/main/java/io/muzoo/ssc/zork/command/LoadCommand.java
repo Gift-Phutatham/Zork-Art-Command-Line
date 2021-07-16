@@ -1,11 +1,10 @@
 package io.muzoo.ssc.zork.command;
 
 import io.muzoo.ssc.zork.Game;
-import io.muzoo.ssc.zork.item.Item;
 
 import java.util.List;
 
-public class TakeCommand implements Command {
+public class LoadCommand implements Command {
 
     @Override
     public int numArgs() {
@@ -14,12 +13,11 @@ public class TakeCommand implements Command {
 
     @Override
     public String getCommand() {
-        return "take";
+        return "load";
     }
 
     @Override
     public void execute(Game game, List<String> args) {
-        Item item = game.currentMap.take(args.get(0));
-        game.player.take(item);
+
     }
 }

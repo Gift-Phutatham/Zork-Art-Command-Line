@@ -19,6 +19,10 @@ public class CommandFactory {
             AttackWithCommand.class,
             GoCommand.class,
             HelpCommand.class,
+            QuitCommand.class,
+            PlayCommand.class,
+            LoadCommand.class,
+            SaveCommand.class,
             ExitCommand.class
     );
 
