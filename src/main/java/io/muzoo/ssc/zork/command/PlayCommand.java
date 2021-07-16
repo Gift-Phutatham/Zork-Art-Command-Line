@@ -18,6 +18,8 @@ public class PlayCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
-        game.play(args.get(0));
+        if (!game.isInGame) {
+            game.play(args.get(0));
+        }
     }
 }

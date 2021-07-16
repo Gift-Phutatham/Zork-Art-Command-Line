@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Game {
 
     public MyMap currentMap;
+    public boolean isInGame;
     public Player player = new Player();
     private GameOutput output = new GameOutput();
     private CommandParser commandParser = new CommandParser();
@@ -43,11 +44,17 @@ public class Game {
     public void play(String mapName) {
         currentMap = MyMapFactory.get(mapName);
         if (currentMap != null) {
+            isInGame = true;
+            player = new Player();
             currentMap.initialize();
             System.out.println("Playing in " + currentMap.getMyMapName());
         } else {
             System.out.println(mapName + " is not found");
         }
+    }
+
+    public void quit() {
+        isInGame = false;
     }
 
 //    public void load() {

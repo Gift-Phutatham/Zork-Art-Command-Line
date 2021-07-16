@@ -18,6 +18,8 @@ public class QuitCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
-
+        if (game.isInGame) {
+            game.quit();
+        }
     }
 }

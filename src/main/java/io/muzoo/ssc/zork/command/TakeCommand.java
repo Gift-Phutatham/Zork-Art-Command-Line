@@ -19,7 +19,9 @@ public class TakeCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
-        Item item = game.currentMap.take(args.get(0));
-        game.player.take(item);
+        if (game.isInGame) {
+            Item item = game.currentMap.take(args.get(0));
+            game.player.take(item);
+        }
     }
 }

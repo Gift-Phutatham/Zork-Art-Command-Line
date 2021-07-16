@@ -18,6 +18,8 @@ public class DropCommand implements Command {
 
     @Override
     public void execute(Game game, List<String> args) {
-        game.player.drop(args.get(0));
+        if (game.isInGame) {
+            game.player.drop(args.get(0));
+        }
     }
 }
